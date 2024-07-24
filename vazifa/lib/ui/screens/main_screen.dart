@@ -40,7 +40,7 @@ class MainScreen extends StatelessWidget {
               return ListTile(
                 leading: CircleAvatar(
                   backgroundImage: NetworkImage(product['images'][0]
-                      .substring(2, product['images'][0].length - 2)),
+                      .substring(2, product['images'][0].length - 1)),
                 ),
                 title: Text("${product['title']} ${index + 1}"),
                 subtitle: Text(product['description']),
@@ -83,6 +83,9 @@ class MainScreen extends StatelessWidget {
                                   content: Text("Mahsulot ochirildi"),
                                 ),
                               );
+                              if (refetch != null) {
+                                refetch();
+                              }
                               // Navigator.pop(context);
                             }));
                       },
